@@ -128,6 +128,26 @@
                 @yield('content')
             </div>
         </main>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="{{ route('dashboard') }}" class="bottom-nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a href="{{ route('transactions.index') }}" class="bottom-nav-item {{ request()->routeIs('transactions.*') ? 'active' : '' }}">
+                <i class="fa-solid fa-list-check"></i>
+            </a>
+            <a href="{{ route('renters.index') }}" class="bottom-nav-item {{ request()->routeIs('renters.*') ? 'active' : '' }}">
+                <i class="fa-solid fa-users"></i>
+                <span class="nav-badge">0</span>
+            </a>
+            <a href="{{ route('expense-parties.index') }}" class="bottom-nav-item {{ request()->routeIs('expense-parties.*') ? 'active' : '' }}">
+                <i class="fa-solid fa-store"></i>
+            </a>
+            <a href="{{ route('banks.index') }}" class="bottom-nav-item {{ request()->routeIs('banks.*') ? 'active' : '' }}">
+                <i class="fa-solid fa-building-columns"></i>
+            </a>
+        </nav>
     </div>
 
     <!-- Modals Utility Scripts -->

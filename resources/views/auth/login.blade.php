@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Login - Hisab-Kitab ERP</title>
-    
+
     <!-- Google Fonts & FontAwesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Core Custom Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() }}">
     <style>
@@ -22,7 +25,7 @@
             min-height: 100vh;
             background: radial-gradient(circle at top, var(--bg-sidebar), var(--bg-primary));
         }
-        
+
         .login-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -80,6 +83,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="login-card">
@@ -90,13 +94,15 @@
         <p class="login-subtitle">Enter your mobile number to access the panel</p>
 
         @if(session('error'))
-            <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: var(--color-danger); padding: 0.75rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.85rem; text-align: left;">
+            <div
+                style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: var(--color-danger); padding: 0.75rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.85rem; text-align: left;">
                 <i class="fa-solid fa-circle-exclamation" style="margin-right: 0.5rem;"></i> {{ session('error') }}
             </div>
         @endif
 
         @if(session('success'))
-            <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: var(--color-success); padding: 0.75rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.85rem; text-align: left;">
+            <div
+                style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: var(--color-success); padding: 0.75rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.85rem; text-align: left;">
                 <i class="fa-solid fa-circle-check" style="margin-right: 0.5rem;"></i> {{ session('success') }}
             </div>
         @endif
@@ -105,9 +111,10 @@
             @csrf
             <div class="form-group" style="text-align: left;">
                 <label for="mobile" style="font-weight: 600;">Mobile Number</label>
-                <input type="tel" name="mobile" id="mobile" class="form-control" placeholder="e.g. 9106798459" required autofocus autocomplete="tel" style="padding: 0.85rem; font-size: 1.05rem; letter-spacing: 1px;">
+                <input type="tel" name="mobile" id="mobile" class="form-control" required autofocus autocomplete="tel"
+                    style="padding: 0.85rem; font-size: 1.05rem; letter-spacing: 1px;">
             </div>
-            
+
             <button type="submit" class="btn btn-primary login-btn">
                 Secure Login <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i>
             </button>
@@ -115,4 +122,5 @@
     </div>
 
 </body>
+
 </html>
