@@ -105,7 +105,7 @@
             @csrf
             <div class="form-group" style="text-align: left;">
                 <label for="mobile" style="font-weight: 600;">Mobile Number</label>
-                <input type="tel" name="mobile" id="mobile" class="form-control" placeholder="e.g. 9109798459" required autofocus autocomplete="tel" style="padding: 0.85rem; font-size: 1.05rem; letter-spacing: 1px;">
+                <input type="tel" name="mobile" id="mobile" class="form-control" placeholder="e.g. 9106798459" required autofocus autocomplete="tel" style="padding: 0.85rem; font-size: 1.05rem; letter-spacing: 1px;">
             </div>
             
             <button type="submit" class="btn btn-primary login-btn">

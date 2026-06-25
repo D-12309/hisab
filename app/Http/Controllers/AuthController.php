@@ -21,7 +21,7 @@ class AuthController extends Controller
             'mobile' => 'required'
         ]);
 
-        if ($request->mobile === '9109798459') {
+        if ($request->mobile === '9106798459') {
             session(['is_logged_in' => true]);
             return redirect()->route('dashboard')->with('success', 'Logged in successfully!');
         }
