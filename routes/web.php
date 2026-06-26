@@ -42,5 +42,12 @@ Route::middleware(['mobile.auth'])->group(function () {
 
     // Banks/Bankers CRUD
     Route::resource('banks', BankController::class);
+
+    // Document Users
+    Route::resource('document-users', App\Http\Controllers\DocumentUserController::class);
+    Route::post('document-users/{documentUser}/documents', [App\Http\Controllers\UserDocumentController::class, 'store'])->name('document-users.documents.store');
+    Route::get('document-users/{documentUser}/documents/{document}/view', [App\Http\Controllers\UserDocumentController::class, 'view'])->name('document-users.documents.view');
+    Route::get('document-users/{documentUser}/documents/{document}/download', [App\Http\Controllers\UserDocumentController::class, 'download'])->name('document-users.documents.download');
+    Route::delete('document-users/{documentUser}/documents/{document}', [App\Http\Controllers\UserDocumentController::class, 'destroy'])->name('document-users.documents.destroy');
 });
 

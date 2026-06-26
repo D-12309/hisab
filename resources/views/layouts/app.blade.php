@@ -91,6 +91,12 @@
                         <span>Bankers List</span>
                     </a>
                 </li>
+                <li class="sidebar-item {{ Request::routeIs('document-users.*') ? 'active' : '' }}">
+                    <a href="{{ route('document-users.index') }}">
+                        <i class="fa-solid fa-id-card"></i>
+                        <span>Document Users</span>
+                    </a>
+                </li>
             </ul>
             
             <div class="sidebar-footer">
@@ -146,6 +152,9 @@
             </a>
             <a href="{{ route('banks.index') }}" class="bottom-nav-item {{ request()->routeIs('banks.*') ? 'active' : '' }}">
                 <i class="fa-solid fa-building-columns"></i>
+            </a>
+            <a href="{{ route('document-users.index') }}" class="bottom-nav-item {{ request()->routeIs('document-users.*') ? 'active' : '' }}">
+                <i class="fa-solid fa-id-card"></i>
             </a>
         </nav>
     </div>
